@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" href="/titlelogo.jpg" type="image/icon type" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>MyShopping Cart</title>
+  </head>
+  <body>
+    <header>
+      <div class="bg"></div>
+      <h1 class="text-center text-primary title">
+        My Shopping CardD's validation
+      </h1>
+      <hr class="divider-title" />
+    </header>
+    <main class="container bootstrap snippets bootdey" id="container">
+      <div class="col-ms-10 col-md-4">
+        <div class="project">
+          <figure class="img-responsive">
+            <img src="steam card.png" />
+            <figcaption>
+              <span class="project-details">$50 Steam Card</span>
+              <span class="project-price"><strong>$50</strong></span>
+              <span class="project-creator">50 USD to buy Steam Games</span>
+            </figcaption>
+            <span class="actions">
+              <button class="btn-heart">
+                Add To Wishlist <i class="far fa-heart"></i>
+              </button>
+            </span>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-ms-10 col-md-4">
+        <div class="project">
+          <figure class="img-responsive">
+            <img src="/lolrpcard.png" />
+            <figcaption>
+              <span class="project-details">$50 RP Card</span>
+              <span class="project-price"><strong>$50</strong></span>
+              <span class="project-creator"
+                >7200 Riot Points (Only for NA server)</span
+              >
+            </figcaption>
+            <span class="actions">
+              <button class="btn-heart">
+                Add To Wishlist <i class="far fa-heart"></i>
+              </button>
+            </span>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-ms-10 col-md-4">
+        <div class="project">
+          <figure class="img-responsive">
+            <img src="/Battle-net-50-EN.jpg" />
+            <figcaption>
+              <span class="project-details">$50 Battle.net</span>
+              <span class="project-price"><strong>$50</strong></span>
+              <span class="project-creator"
+                >Add 50 USD to your Blizzard account
+              </span>
+            </figcaption>
+            <span class="actions">
+              <button class="btn-heart">
+                Add To Wishlist <i class="far fa-heart"></i>
+              </button>
+            </span>
+          </figure>
+        </div>
+      </div>
+    </main>
+    <section class="container content-section">
+      <div class="cart-row1">
+        <span class="cart-item cart-header cart-column">ITEM</span>
+        <span class="cart-price cart-header cart-column">PRICE</span>
+        <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+      </div>
+      <div class="cart-items">
+        <div class="cart-row">
+          <div class="cart-item cart-column">
+            <img
+              class="cart-item-image"
+              src="/steam card.png"
+              width="100"
+              height="100"
+            />
+            <span class="cart-item-title">Steam Card</span>
+          </div>
+          <span class="price">$50</span>
+          <div class="cart-quantity cart-column">
+            <button class="add"><i class="fas fa-plus-circle"></i></button>
+            <span class="cart-quantity-input" type="number" value="1">1</span>
+            <button class="minus-btn">
+              <i class="fas fa-minus-circle"></i>
+            </button>
+            <button class="btn btn-danger" type="button">REMOVE</button>
+          </div>
+        </div>
+        <div class="cart-row">
+          <div class="cart-item cart-column">
+            <img
+              class="cart-item-image"
+              src="/lolrpcard.png"
+              width="100"
+              height="100"
+            />
+            <span class="cart-item-title">RP Card</span>
+          </div>
+          <span class="price">$50</span>
+          <div class="cart-quantity cart-column">
+            <button class="add"><i class="fas fa-plus-circle"></i></button>
+            <span class="cart-quantity-input" type="number" value="1">1</span>
+            <button class="minus-btn">
+              <i class="fas fa-minus-circle"></i>
+            </button>
+            <button class="btn btn-danger" type="button">REMOVE</button>
+          </div>
+        </div>
+        <div class="cart-row">
+          <div class="cart-item cart-column">
+            <img
+              class="cart-item-image"
+              src="/Battle-net-50-EN.jpg"
+              width="100"
+              height="100"
+            />
+            <span class="cart-item-title">Blizzard Card</span>
+          </div>
+          <span class="price">$50</span>
+          <div class="cart-quantity cart-column">
+            <button class="add"><i class="fas fa-plus-circle"></i></button>
+            <span class="cart-quantity-input" type="number" value="1">1</span>
+            <button class="minus-btn">
+              <i class="fas fa-minus-circle"></i>
+            </button>
+            <button class="btn btn-danger" type="button">REMOVE</button>
+          </div>
+        </div>
+      </div>
+      <div class="cart-total">
+        <strong class="cart-total-title">Total</strong>
+        <span class="cart-total-price" id="totalprice">$150</span>
+      </div>
+      <button class="btn btn-primary btn-purchase" type="button">
+        PURCHASE
+      </button>
+    </section>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
