@@ -1,0 +1,22 @@
+!ALGORITHM algorithm_checkpoint
+VAR
+   l,n,i,totalvowels,words : INTEGER ;   //'l'ength of the sentence
+    l:=0 ; 
+    n:=0 ;
+    i:=0 ;
+    
+BEGIN
+ WHILE (i!=".")
+    IF(l[i] = ' ')
+    n:=n+1 ;
+    ELSE_IF (l[i]==(a||e||i||o||u||A||E||I||O||U)
+    totalvowels:=totalvowels+1;
+    l:=l+1;
+    ELSE
+    l:=l+1;
+    END_IF
+    i:=i+1 ;
+ END_WHILE
+    words:=n+1;
+ Write (l ,words ,totalvowels);
+END
