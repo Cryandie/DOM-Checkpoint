@@ -1,0 +1,128 @@
+!ALGORITHM solution1
+VAR
+    set1, set2 : ARRAY_OF INTEGER[20];
+    arr,tab : ARRAY_OF INTEGER[50];
+    l1,l2,s,i,j: INTEGER :=0;              ////////////L1,L2 : array weight(content size) //////////////
+
+BEGIN
+//////////Unique elements////////////////
+   FOR i FROM 0 TO l1-1 DO
+       FOR j FROM 0 TO l2-1 DO
+       IF (set1[i]=set2[j]) THEN
+           
+           tab[s]:=set1[i];
+           s:=s+1;
+           break;
+       END_IF
+   END_FOR
+   END_FOR
+
+
+/////////// Distinct elements////////////
+/////////// Set 1 //////////////
+   FOR i FROM 0 TO l1-1 DO
+       FOR j FROM 0 TO tab.length-1 DO
+       IF (tab[j]=set1[i]) THEN
+           break;
+       END_IF
+       IF (set1[i]<>tab[j] AND j=tab.length-1) THEN
+           arr[s]:=set1[i];
+           s:=s+1;
+       END_IF
+   END_FOR
+   END_FOR
+   /////////Set 2 //////////////
+      FOR i FROM 0 TO l2-1 DO
+       FOR j FROM 0 TO tab.length-1 DO
+       IF (tab[j]=set2[i]) THEN
+           break;
+       END_IF
+       IF (set1[i]<>tab[j] AND j=tab.length-1) THEN
+           arr[s]:=set2[i];
+           s:=s+1;
+       END_IF
+   END_FOR
+   END_FOR
+   FOR i FROM 0 TO arr.length-1 DO
+    s:=s+arr[i];
+END_FOR
+   Write(s);
+END
+
+
+
+/////////////////////////// 'H' Table  ;) ////////////////////
+ALGORITHM solution2
+VAR
+    set1, set2 : ARRAY_OF INTEGER[20];
+    arr,tab : ARRAY_OF INTEGER[50];
+    htab : HASH_TABLE <INTEGER,INTEGER> ;
+   // c : ARRAY_OF INTEGER [100] ;       //////////I wont use this because I'm noob, gonna try to learn more about it////////////
+    l1,l2,s,i,j: INTEGER :=0 ;
+BEGIN
+ //  FOR i FROM 0 TO l1-1 DO
+ //      Read(set1[i]);
+ //  END_FOR
+// FOR i FROM 0 TO l2-1 DO
+   //    Read(set2[i]);
+ //  END_FOR
+ ///  FOR i FROM 0 TO tab.length-1 DO  ///////////We can use this method/////////////
+ ///     c.append(set1, set2)        /////////Merging two sorted lists into one///////////
+///      htab.get(tab)               /////////To delete duplicates, then get the sum of unique values but I'm not sure about how to use this //////////////
+//   END_FOR                                                   ///So I will skip it and use another one, I need more points on my grade :p///
+FOR i FROM 0 TO arr.length-1 DO
+    htab.insert(arr[i],0);         //We already created an 'arr' with the distinct elements so let's use it ///////////
+    END_FOR
+    FOR i FROM 0 TO tab.length-1 DO    
+    htab.insert(tab[i],1);
+   END_FOR
+   WHILE (i<arr.length) DO
+    s:=s+htab[arr[i]];
+    i:=i+1;
+END_WHILE
+   Write(s);
+END
+
+///////////////////////////second_part//////////////////////////////////
+
+!ALGORITHM second_part-algo1
+VAR
+  set1, set2 : ARRAY_OF INTEGER[20];
+    tab : ARRAY_OF INTEGER[50];
+    s,i,j,l1,l2: INTEGER :=0 ;
+BEGIN
+   FOR i FROM 0 TO l1-1 DO
+       FOR j FROM 0 TO l2-1 DO
+       IF (set1[i]=set2[j]) THEN
+           
+           tab[s]:=set1[i];
+           s:=s+1;
+           break;
+       END_IF
+   END_FOR
+   END_FOR  
+   Write(s);
+END
+
+//////////////////////Another 'H'///////////////////////
+
+!ALGORITHM second_part-algo2
+VAR
+    set1, set2 : ARRAY_OF INTEGER[20];
+    arr,tab : ARRAY_OF INTEGER[50];
+    htab : HASH_TABLE <INTEGER,INTEGER> ;
+    l1,l2,s,i,j: INTEGER :=0 ;
+BEGIN
+
+FOR i FROM 0 TO arr.length-1 DO
+    htab.insert(arr[i],0);        
+    END_FOR
+    FOR i FROM 0 TO tab.length-1 DO
+    htab.insert(tab[i],1);
+   END_FOR
+   WHILE (i<tab.length) DO            /////////Ctrl+c Ctrl+v the -'H' Table- part and replace  'arr' by 'tab'////////////////// 
+    s:=s+htab[tab[i]];
+    i:=i+1;
+END_WHILE
+   Write(s)
+END
