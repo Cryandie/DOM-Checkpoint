@@ -1,0 +1,51 @@
+ALGORITHM dot_product
+    PROCEDURE dot_product(ary1, ary2)
+VAR
+    ary1,ary2 : ARRAY_OF INTEGER[10];
+    dotprod,i : INTEGER := 0;
+BEGIN
+IF (ary1.length <> ary2.length) THEN
+    FOR i FROM 0 TO ary1.length DO
+    dotprod := dotprod + ary1[i] * ary2[i];
+    i:=i+1;
+ELSE 
+    Write ("can't find dot product: arrays have different lengths")
+END_IF    
+    END_FOR
+    Write (dotprod);
+END 
+
+
+ALGORITHM orthogonal
+PROCEDURE dot_product(ary1, ary2)
+VAR
+    ary1,ary2 : ARRAY_OF INTEGER[10];
+    dotprod,i : INTEGER := 0;
+BEGIN
+    dot_product(ary1, ary2);
+    Read (ary1 ,ary2) ;
+    IF (dot_product(ary1, ary2) = 0 ) THEN
+    Write ("the two vectors are orthogonal");
+    ELSE
+    Write ("the two vectors aren't orthogonal");
+    END_IF
+END
+
+
+/////// Orthogonal algorithm with a function ////////
+ALGORITHM orthogonal_with_function
+FUNCTION dot_product(ary1, ary2) : STRING,INTEGER
+VAR
+    ary1,ary2 : ARRAY_OF INTEGER[10];
+    dotprod,i : INTEGER := 0;
+BEGIN 
+    dot_product(ary1, ary2);
+    Read (ary1 ,ary2) ;
+    IF (dot_product(ary1, ary2) = 0 ) THEN
+    RETURN (dotprod);
+    Write ("the two vectors are orthogonal",dot_product(ary1, ary2));
+    ELSE
+    RETURN (dotprod);
+    Write ("the two vectors aren't orthogonal",dot_product(ary1, ary2));
+    END_IF
+END
