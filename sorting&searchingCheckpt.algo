@@ -1,0 +1,15 @@
+ALGORITHM sortingSearching
+VAR
+    array :ARRAY_OF INTEGER[50];
+    i,j :INTEGER :=0;
+    current : INTEGER := array [i];
+BEGIN
+    FOR i FROM 1 TO ary.length DO
+    WHILE (j>=0 AND array[j]>current) DO
+    array [j+1] = array[j];
+    i:=i+1;
+    j:=j+1;
+    END_WHILE
+    array[j+1] = current ;
+    END_FOR
+END
