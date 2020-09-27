@@ -42,10 +42,10 @@ BEGIN
     dot_product(ary1, ary2);
     Read (ary1 ,ary2) ;
     IF (dot_product(ary1, ary2) = 0 ) THEN
-    RETURN (dotprod);
+    RETURN (true);
     Write ("the two vectors are orthogonal",dot_product(ary1, ary2));
     ELSE
-    RETURN (dotprod);
+    RETURN (false);
     Write ("the two vectors aren't orthogonal",dot_product(ary1, ary2));
     END_IF
 END
